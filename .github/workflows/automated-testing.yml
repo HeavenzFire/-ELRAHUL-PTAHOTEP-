@@ -1,0 +1,8 @@
+- name: Initialize Java (Phase-Locked & Cached)
+      uses: actions/setup-java@387ac29b37d806144474952df05b581e6623190f # v4.5.0 (Pinned SHA)
+      with:
+        java-version: '21'                  # LTS version recommended for new advanced systems
+        distribution: 'temurin'             # Eclipse Temurin (High-performance, production standard)
+        cache: 'gradle'                     # 'maven' or 'gradle' - enables build cache immediately
+        check-latest: false                 # Strict locking: Don't check for newer patch versions (Deterministic)
+        token: ${{ secrets.GITHUB_TOKEN }}  # Authenticated requests to avoid API rate-limiting
